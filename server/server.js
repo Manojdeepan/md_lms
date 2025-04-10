@@ -16,6 +16,7 @@ const app = express()
 await connectDB()
 await connectCloudinary()
 
+//alan
 // Middlewares
 app.use(cors({
   origin: ['https://lms-edu-red.vercel.app'],
