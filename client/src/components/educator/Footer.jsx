@@ -22,6 +22,7 @@ const Footer = () => {
           <img src={assets.instagram_icon} alt="instagram_icon" />
         </a>
       </div>
+      
     </footer>
   );
 };
