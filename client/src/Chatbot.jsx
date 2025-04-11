@@ -134,6 +134,172 @@
 
 // export default Chatbot;
 
+// import React, { useState } from 'react';
+
+// const Chatbot = () => {
+//     const [messages, setMessages] = useState([]);
+//     const [userInput, setUserInput] = useState("");
+
+//     const sendMessage = async () => {
+//         if (userInput.trim() === "") return;
+
+//         const newMessages = [...messages, { sender: 'user', text: userInput }];
+//         setMessages(newMessages);
+//         setUserInput("");
+
+//         try {
+//             const response = await fetch("http://localhost:3000/ask", {
+//                 method: "POST",
+//                 headers: { "Content-Type": "application/json" },
+//                 body: JSON.stringify({ input: userInput }),
+//             });
+
+//             const data = await response.json();
+//             const botMessage = data.response || "⚠️ Error: No response from server.";
+//             setMessages([...newMessages, { sender: 'bot', text: botMessage }]);
+//         } catch (error) {
+//             setMessages([...newMessages, { sender: 'bot', text: "⚠️ Error: Unable to reach the server." }]);
+//         }
+//     };
+
+//     const handleKeyPress = (e) => {
+//         if (e.key === 'Enter') sendMessage();
+//     };
+
+//     return (
+//         <div style={styles.container}>
+//             <h2 style={styles.title}>
+//                 <span style={styles.icon}>🤖</span>
+//                 <span style={styles.brand}>Chatbot - Rolex</span>
+//             </h2>
+
+//             <div style={styles.messages}>
+//                 {messages.map((msg, index) => (
+//                     <div
+//                         key={index}
+//                         style={{
+//                             ...styles.message,
+//                             ...(msg.sender === "user" ? styles.user : styles.bot),
+//                         }}
+//                     >
+//                         {msg.text}
+//                     </div>
+//                 ))}
+//             </div>
+
+//             <div style={styles.inputContainer}>
+//                 <input
+//                     type="text"
+//                     value={userInput}
+//                     onChange={(e) => setUserInput(e.target.value)}
+//                     onKeyPress={handleKeyPress}
+//                     placeholder="Type your message here..."
+//                     style={styles.input}
+//                 />
+//                 <button onClick={sendMessage} style={styles.button}>Send</button>
+//             </div>
+//         </div>
+//     );
+// };
+
+// const styles = {
+//     container: {
+//         fontFamily: "'Poppins', sans-serif",
+//         background: "linear-gradient(to bottom right, #ffffff, #f0f4f8)",
+//         padding: "40px",
+//         margin: "40px auto",
+//         borderRadius: "20px",
+//         boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
+//         maxWidth: "700px",
+//         width: "90%",
+//         textAlign: "center",
+//     },
+//     title: {
+//         fontSize: "32px",
+//         marginBottom: "25px",
+//         fontWeight: "700",
+//         background: "linear-gradient(90deg, #ffd700, #ff8c00)",
+//         WebkitBackgroundClip: "text",
+//         WebkitTextFillColor: "transparent",
+//         display: "flex",
+//         alignItems: "center",
+//         justifyContent: "center",
+//         gap: "10px",
+//         letterSpacing: "1px",
+//     },
+//     icon: {
+//         fontSize: "34px",
+//         animation: "pulse 2s infinite",
+//     },
+//     brand: {
+//         fontWeight: "800",
+//     },
+//     messages: {
+//         height: "400px",
+//         overflowY: "auto",
+//         background: "#ffffff",
+//         borderRadius: "15px",
+//         padding: "20px",
+//         border: "1px solid #e0e0e0",
+//         marginBottom: "20px",
+//         boxShadow: "inset 0 2px 8px rgba(0,0,0,0.05)",
+//     },
+//     message: {
+//         padding: "12px 18px",
+//         borderRadius: "16px",
+//         margin: "8px 0",
+//         maxWidth: "80%",
+//         wordWrap: "break-word",
+//         fontSize: "15px",
+//         lineHeight: "1.6",
+//         position: "relative",
+//         transition: "all 0.3s ease-in-out",
+//     },
+//     user: {
+//         backgroundColor: "#007bff",
+//         color: "white",
+//         alignSelf: "flex-end",
+//         marginLeft: "auto",
+//         textAlign: "right",
+//         boxShadow: "2px 2px 6px rgba(0,123,255,0.3)",
+//     },
+//     bot: {
+//         backgroundColor: "#f1f1f1",
+//         color: "#333",
+//         alignSelf: "flex-start",
+//         marginRight: "auto",
+//         textAlign: "left",
+//         boxShadow: "2px 2px 6px rgba(0,0,0,0.1)",
+//     },
+//     inputContainer: {
+//         display: "flex",
+//         justifyContent: "center",
+//         alignItems: "center",
+//         gap: "12px",
+//     },
+//     input: {
+//         flex: 1,
+//         padding: "12px 15px",
+//         borderRadius: "10px",
+//         border: "1px solid #ccc",
+//         fontSize: "15px",
+//         outline: "none",
+//         transition: "0.3s ease",
+//     },
+//     button: {
+//         padding: "12px 20px",
+//         backgroundColor: "#007bff",
+//         color: "white",
+//         border: "none",
+//         borderRadius: "10px",
+//         fontSize: "15px",
+//         cursor: "pointer",
+//         transition: "background 0.3s ease",
+//     },
+// };
+
+// export default Chatbot;
+
 import React, { useState } from 'react';
 
 const Chatbot = () => {
